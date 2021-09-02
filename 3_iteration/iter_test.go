@@ -2,6 +2,7 @@ package iteration
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -23,4 +24,14 @@ func BenchmarkRepeat(b *testing.B) {
 func ExampleRepeat() {
 	fmt.Println(Repeat("j", 6))
 	// Output: jjjjjj
+}
+
+func ExampleContainsAny() {
+	fmt.Println(strings.ContainsAny("cool", "oo"))
+	// Output: true
+}
+
+func ExampleAPIRepeat() {
+	fmt.Println("His name was " + strings.Repeat("scary ", 2) + "terry.")
+	// Output: His name was scary scary terry.
 }
