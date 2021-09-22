@@ -73,7 +73,7 @@ def get_codey_lyrics(word_input):
 
 def main():
 	# get_all_lyrics()
-	get_codey_lyrics('condition')
+	get_codey_lyrics('degree')
  
 if __name__ == "__main__":
 	main()
