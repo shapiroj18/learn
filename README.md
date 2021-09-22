@@ -32,5 +32,8 @@ Bash script that can be used to send scheduled text messages on a mac.
 ## phish-albums  
 Quick python script to update names of phish album cover png's for the [Phish Bot](https://github.com/shapiroj18/phish-bot)
 
+## phishsongs-code
+Basic script that prints all phish songs that have a specific lyric.
+
 ## rapid-testing  
 Wrote a script during the height of the pandemic to find rapid testing appointments
