@@ -17,7 +17,7 @@ Data engineering [tutorials](https://peterdannemann.com/), no longer seems to be
 1. **docker-test**  
 Built docker image with numpy dependency.
 
-1. **Go**
+1. **Go**  
 Teaching myself Go through [Learning Go with Tests](https://quii.gitbook.io/learn-go-with-tests/).
 
 1. **mac-text-app**
