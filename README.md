@@ -17,7 +17,7 @@ Data engineering [tutorials](https://peterdannemann.com/), no longer seems to be
 1. **docker-test**  
 Built docker image with numpy dependency.
 
-1. **Go**  
+1. **go**  
 Teaching myself Go through [Learning Go with Tests](https://quii.gitbook.io/learn-go-with-tests/).
 
 1. **mac-text-app**
@@ -26,8 +26,8 @@ Bash script that can be used to send scheduled text messages on a mac.
    * In the script set `RECIPIENT` to whoever you want to send (by name)
    * In your terminal open cron with `crontab -e` and add an entry such as `* * * * * cd ~/path_to_enclosing_folder && ./mac_texts.sh` to schedule running your bash script on a schedule with [crontab syntax](https://crontab.guru/)
 
-1. **phish-albums**
+1. **phish-albums**  
 Quick python script to update names of phish album cover png's for the [Phish Bot](https://github.com/shapiroj18/phish-bot)
 
-1. **rapid-testing**
+1. **rapid-testing**  
 Wrote a script during the height of the pandemic to find rapid testing appointments
