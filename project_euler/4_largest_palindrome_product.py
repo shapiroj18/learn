@@ -6,30 +6,32 @@ import numpy as np
 
 two_digit_list = []
 for i in range(100, 1000):
-	two_digit_list.append(i)
+    two_digit_list.append(i)
 
 a = two_digit_list.copy()
 b = two_digit_list.copy()
 
 products = []
 for i in a:
-	for j in b:
-		products.append(i * j)
+    for j in b:
+        products.append(i * j)
 
 
 product_boolean = []
 for i in products:
-	if len(str(i)) % 2 == 0:
-		if str(i)[:int(len(str(i))/2)] == str(i)[-int(len(str(i))/2):][::-1]:
-			product_boolean.append(True)
-		else:
-			product_boolean.append(False)
-	else:
-		if str(i)[:int(len(str(i))/2) + 1] == str(i)[- int(len(str(i))/2) - 1:][::-1]:
-			product_boolean.append(True)
-		else:
-			product_boolean.append(False)
-
+    if len(str(i)) % 2 == 0:
+        if str(i)[: int(len(str(i)) / 2)] == str(i)[-int(len(str(i)) / 2) :][::-1]:
+            product_boolean.append(True)
+        else:
+            product_boolean.append(False)
+    else:
+        if (
+            str(i)[: int(len(str(i)) / 2) + 1]
+            == str(i)[-int(len(str(i)) / 2) - 1 :][::-1]
+        ):
+            product_boolean.append(True)
+        else:
+            product_boolean.append(False)
 
 
 products_array = np.array(products)

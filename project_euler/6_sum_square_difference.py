@@ -4,9 +4,8 @@ sum_numbers = sum(numbers)
 
 squares = []
 for number in numbers:
-	square = number ** 2
-	squares.append(square)
+    square = number ** 2
+    squares.append(square)
 
 
-
-print(sum_numbers **2 - sum(squares))
+print(sum_numbers ** 2 - sum(squares))

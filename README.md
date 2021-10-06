@@ -35,5 +35,8 @@ Quick python script to update names of phish album cover png's for the [Phish Bo
 ## phishsongs-code
 Basic script that prints all phish songs that have a specific lyric.
 
+## project-euler
+[Project Euler](https://projecteuler.net/) problems - very fun puzzles.
+
 ## rapid-testing  
 Wrote a script during the height of the pandemic to find rapid testing appointments
