@@ -2,6 +2,9 @@
 
 # Learning and Ad-Hoc Projects
 
+## advent-of-code
+[Advent of code](https://adventofcode.com/) solutions.
+
 ## apache-airflow-udemy  
 Apache Airflow Course.
 
@@ -13,6 +16,9 @@ Text editor built using tkinter. [Tutorial here](https://www.youtube.com/watch?v
 
 ## data-pipe-tutorial-peterdannemann  
 Data engineering [tutorials](https://peterdannemann.com/), no longer seems to be online.
+
+## dev-esc
+Development "escape room." Found at [/dev/esc](https://www.dev-esc.com/).
 
 ## docker-test  
 Built docker image with numpy dependency.
