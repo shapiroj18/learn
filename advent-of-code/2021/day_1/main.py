@@ -8,7 +8,7 @@ def read_file(file_path: str) -> list:
         
     return data
 
-def answer_increase_decrease(data_floor_depth: list):
+def answer_increase_decrease_1(data_floor_depth: list):
     
     answers = []
     for i, x in enumerate(data_floor_depth):
@@ -22,20 +22,20 @@ def answer_increase_decrease(data_floor_depth: list):
     return answers
 
 
-def count_increases(answers: list) -> int:
+def count_increases_1(answers: list) -> int:
     
     total = answers.count('(increased)')
     
     return total
 
-def main():
+def main_1():
     
     raw_data = read_file('data.txt')
-    answers = answer_increase_decrease(raw_data)
-    total_count = count_increases(answers)
+    answers = answer_increase_decrease_1(raw_data)
+    total_count = count_increases_1(answers)
     
     return total_count
     
 
 if __name__ == '__main__':
-    exit(print(main()))
+    exit(print(main_1()))
