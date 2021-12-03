@@ -70,6 +70,7 @@ def parse_co2_scrubber_rating(content):
 
 def main():
     content = read_file("data.txt")
+
     gamma_rate = parse_gamma_rate(content)
     epsilon_rate = parse_epsilon_rate(gamma_rate)
 
