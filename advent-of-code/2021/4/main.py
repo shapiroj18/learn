@@ -50,7 +50,7 @@ def find_winner(caller_input, bingo_boards):
         counter += 1
 
 
-def find_loser(caller_input, bingo_boards):
+def find_loser_board(caller_input, bingo_boards):
 
     counter = 0
     all_boards = bingo_boards.copy()
@@ -61,9 +61,15 @@ def find_loser(caller_input, bingo_boards):
                 all_boards.pop(i)
 
         if len(all_boards) == 1:
-            # print(current_nums, all_boards[0])
-            return current_nums, all_boards[0]
+            return all_boards[0]
         counter += 1
+
+
+def find_loser_counter(caller_input, bingo_board):
+
+    for i in range(len(caller_input)):
+        if test_winner(caller_input[:i], bingo_board):
+            return caller_input[:i]
 
 
 def get_score(caller_input, bingo_board):
@@ -93,9 +99,10 @@ def main():
 
     print(f"Question 1: {get_score(final_caller_input, bingo_winner)}")
 
-    final_caller_input, bingo_loser = find_loser(
-        parsed_caller_input, parsed_bingo_arrays
-    )
+    bingo_loser = find_loser_board(parsed_caller_input, parsed_bingo_arrays)
+
+    final_caller_input = find_loser_counter(parsed_caller_input, bingo_loser)
+
     print(f"Question 2: {get_score(final_caller_input, bingo_loser)}")
 
 
