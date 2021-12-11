@@ -1,3 +1,6 @@
+import collections
+
+
 def read_file(file_path: str) -> list:
 
     f = open(file_path)
@@ -6,42 +9,29 @@ def read_file(file_path: str) -> list:
     return content
 
 
-def parse_initial_state(content) -> list:
-    return [int(x) for x in content[0].split(",")]
+def parse_initial_state(content) -> collections.Counter:
+    return collections.Counter([int(x) for x in content[0].split(",")])
 
 
-def _step(current_state: list) -> list:
-    next_state = []
-    for i in current_state:
-        if i == 0:
-            current_fish = 6
-            new_fish = 8
-            next_state.append(current_fish)
-            next_state.append(new_fish)
+def get_final_state(initial_state: collections.Counter, number_of_steps: int) -> list:
+    counter = initial_state
+    for _ in range(number_of_steps):
+        counter2 = collections.Counter({6: counter[0], 8: counter[0]})
+        for i, j in counter.items():
+            if i > 0:
+                counter2[i - 1] += j
+        counter = counter2
 
-        else:
-            current_fish = i - 1
-            next_state.append(current_fish)
-
-    return next_state
+    return counter
 
 
-def get_final_state(initial_state, number_of_steps: int) -> list:
-    this_state = initial_state
-    for i in range(number_of_steps):
-        next_state = _step(this_state)
-        this_state = next_state
-
-    return this_state
-
-
-def count_number_of_fish(state: list) -> int:
-    return len(state)
+def count_number_of_fish(state: collections.Counter) -> int:
+    return sum(state.values())
 
 
 def main():
 
-    number_of_days = 80
+    number_of_days = 256
 
     content = read_file("data.txt")
     initial_state = parse_initial_state(content)
