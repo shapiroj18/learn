@@ -1,3 +1,6 @@
+import math
+
+
 def read_file(file_path: str) -> list:
 
     f = open(file_path)
@@ -42,6 +45,44 @@ def gen_all_multiple_coords(coords: list) -> list:
             elif x1 < x2:
                 for j in range(x1, x2 + 1):
                     coords_list.append([j, y1])
+
+        else:
+            x_diff = max([x1, x2]) - min([x1, x2])
+            y_diff = max([y1, y2]) - min([y1, y2])
+
+            if x_diff != 0 and y_diff != 0:
+                if math.degrees(math.atan(x_diff / y_diff)) == 45.0:
+                    x_dir = "positive" if x1 < x2 else "negative"
+                    y_dir = "positive" if y1 < y2 else "negative"
+
+                    if x_dir == "positive" and y_dir == "positive":
+
+                        for i in range(x1, x2 + 1):
+
+                            coords_list.append([x1, y1])
+                            x1 += 1
+                            y1 += 1
+
+                    elif x_dir == "positive" and y_dir == "negative":
+
+                        for i in range(x1, x2 + 1):
+                            coords_list.append([x1, y1])
+                            x1 += 1
+                            y1 -= 1
+
+                    elif x_dir == "negative" and y_dir == "positive":
+
+                        for i in range(x2, x1 + 1):
+                            coords_list.append([x1, y1])
+                            x1 -= 1
+                            y1 += 1
+
+                    elif x_dir == "negative" and y_dir == "negative":
+
+                        for i in range(x2, x1 + 1):
+                            coords_list.append([x1, y1])
+                            x1 -= 1
+                            y1 -= 1
 
     multiple_coords = []
     for i in coords_list:
