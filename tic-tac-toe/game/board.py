@@ -55,7 +55,6 @@ class Board:
         
         # check if horizontals are filled with all of the same value
         for i in self.horizontals:
-            print(i)
             vals = []
             for j in i:
                 vals.append(board[j])
