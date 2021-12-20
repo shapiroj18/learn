@@ -76,7 +76,7 @@ def test_determine_game_end_horizontal_true():
         'row_3_col_2': None,
         'row_3_col_3': None,
     }
-    assert board.determine_game_end(test_board) == True
+    assert board.determine_game_end(test_board) == ['row_1_col_1', 'row_1_col_2', 'row_1_col_3']
     
 def test_determine_game_end_vertical_true():
     test_board = {
@@ -90,7 +90,7 @@ def test_determine_game_end_vertical_true():
         'row_3_col_2': None,
         'row_3_col_3': None,
     }
-    assert board.determine_game_end(test_board) == True
+    assert board.determine_game_end(test_board) == ['row_1_col_1', 'row_2_col_1', 'row_3_col_1']
     
 def test_determine_game_end_diagonal_true():
     test_board = {
@@ -104,7 +104,7 @@ def test_determine_game_end_diagonal_true():
         'row_3_col_2': None,
         'row_3_col_3': "X",
     }
-    assert board.determine_game_end(test_board) == True
+    assert board.determine_game_end(test_board) == ['row_1_col_1', 'row_2_col_2', 'row_3_col_3']
 
         
 def test_determine_game_end_full_true():
@@ -115,11 +115,11 @@ def test_determine_game_end_full_true():
         'row_2_col_1': "O",
         'row_2_col_2': "X",
         'row_2_col_3': "O",
-        'row_3_col_1': "X",
-        'row_3_col_2': "O",
-        'row_3_col_3': "X",
+        'row_3_col_1': "O",
+        'row_3_col_2': "X",
+        'row_3_col_3': "O",
     }
-    assert board.determine_game_end(test_board) == True
+    assert board.determine_game_end(test_board) == ['row_1_col_1', 'row_1_col_2', 'row_1_col_3', 'row_2_col_1', 'row_2_col_2', 'row_2_col_3', 'row_3_col_1', 'row_3_col_2', 'row_3_col_3']
     
 def test_determine_game_end_full_false():
     test_board = {

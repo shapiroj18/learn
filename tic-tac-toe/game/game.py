@@ -8,7 +8,7 @@ class Game:
     def __init__(self):
         ...
         
-    def game_setup(self):
+    def game_setup(self) -> str:
         player_2_type = input("Do you want to play against another human or the computer? ").strip().lower()
         accepted_values = ['human', 'computer']
         while player_2_type not in accepted_values:
@@ -16,7 +16,7 @@ class Game:
             
         return player_2_type
     
-    def get_names(self, player_2_type):
+    def get_names(self, player_2_type: str) -> str:
         if player_2_type == 'human':
             player_1_name = input('What is player 1\'s name?\n')
             player_2_name = input('What is player 2\'s name?\n')
@@ -25,7 +25,7 @@ class Game:
             player_1_name = input('What is player 1\'s name?\n')
             return player_1_name, player_2_type
         
-    def get_elements(self, player_1_name, player_2_name, player_2_type):
+    def get_elements(self, player_1_name: str, player_2_name: str, player_2_type: str) -> str:
         
         accepted_values = ["X", "O"]
         player_1_element = input(f'Will {player_1_name} be X\'s or O\'s? ').strip().upper()
@@ -72,5 +72,11 @@ class Game:
         new_board = board.fill_board_value(current_board, possible_moves[move], element)
         return new_board
     
-    def show_winner(self, board: dict):
-        pass
+    def show_winner(self, final_board: dict, game_winner: str) -> None:
+        
+        board = Board()
+        print(board.render_board(final_board))
+        if board.determine_game_end(final_board) == [i for i in final_board.keys()]:
+            print('No winner - play again!')
+        else:
+            print(f'Congrats {game_winner}!\n')

@@ -33,9 +33,8 @@ def main():
             current_board = game.make_move(current_board, player_2_element)
             current_player = player_1
             
-    
-    # # print(current_board)
-    print(board.render_board(current_board))
+    game_winner = player_1 if current_player == player_2 else player_2
+    game.show_winner(current_board, game_winner)
 
 if __name__ == "__main__":
     main()

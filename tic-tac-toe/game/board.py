@@ -51,7 +51,7 @@ class Board:
         
         return board
     
-    def determine_game_end(self, board: dict):
+    def determine_game_end(self, board: dict) -> list:
         
         # check if horizontals are filled with all of the same value
         for i in self.horizontals:
@@ -60,7 +60,7 @@ class Board:
                 vals.append(board[j])
             
             if None not in vals and len(set(vals)) == 1:
-                return True
+                return i
             
         # check if verticals are filled with all of the same value
         for i in self.verticals:
@@ -69,7 +69,7 @@ class Board:
                 vals.append(board[j])
             
             if None not in vals and len(set(vals)) == 1:
-                return True
+                return i
             
         # check if diagonals are filled with all of the same value
         for i in self.diagonals:
@@ -78,11 +78,11 @@ class Board:
                 vals.append(board[j])
                 
             if None not in vals and len(set(vals)) == 1:
-                return True
+                return i
         
         # check if all values in board are filled in
         if all(i for i in board.values()):
-            return True
+            return [i for i in board.keys()]
         
         else:
             return False
@@ -95,18 +95,19 @@ class Board:
         
         return \
     f"""
-    ___________________
-    |     |     |     |
-    |  {self._render_value(board['row_1_col_1'])}  |  {self._render_value(board['row_1_col_2'])}  |  {self._render_value(board['row_1_col_3'])}  |
-    |     |     |     |
-    |-----------------|
-    |     |     |     |
-    |  {self._render_value(board['row_2_col_1'])}  |  {self._render_value(board['row_2_col_2'])}  |  {self._render_value(board['row_2_col_3'])}  |
-    |     |     |     |
-    |-----------------|
-    |     |     |     |
-    |  {self._render_value(board['row_3_col_1'])}  |  {self._render_value(board['row_3_col_2'])}  |  {self._render_value(board['row_3_col_3'])}  |
-    |     |     |     |
-    |-----------------|
+        1     2     3
+     ___________________
+     |     |     |     |
+  1  |  {self._render_value(board['row_1_col_1'])}  |  {self._render_value(board['row_1_col_2'])}  |  {self._render_value(board['row_1_col_3'])}  |
+     |     |     |     |
+     |-----------------|
+     |     |     |     |
+  2  |  {self._render_value(board['row_2_col_1'])}  |  {self._render_value(board['row_2_col_2'])}  |  {self._render_value(board['row_2_col_3'])}  |
+     |     |     |     |
+     |-----------------|
+     |     |     |     |
+  3  |  {self._render_value(board['row_3_col_1'])}  |  {self._render_value(board['row_3_col_2'])}  |  {self._render_value(board['row_3_col_3'])}  |
+     |     |     |     |
+     |-----------------|
     """
     
