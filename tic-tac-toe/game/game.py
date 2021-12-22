@@ -72,13 +72,13 @@ class Game:
             "3,3": "row_3_col_3",
         }
 
-    def make_move(self, current_board: dict, element: str) -> dict:
+    def make_move(self, current_board: dict, player: str, element: str) -> dict:
         board = Board()
         print("Current board:")
         print(board.render_board(current_board))
 
         move = input(
-            'Where would you like your next move to be?\nPlease enter in "row,column" format (rows increase top->bottom, columns increase left->right)\n\n'
+            f'{player}\'s turn! Where would you like your next move to be?\nPlease enter in "row,column" format (rows increase top->bottom, columns increase left->right)\n\n'
         ).strip()
         pattern = re.compile("[1-3],[1-3]")
         possible_moves = self._moves_dict()

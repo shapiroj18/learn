@@ -43,6 +43,7 @@ def test_make_move(monkeypatch):
         "row_3_col_2": None,
         "row_3_col_3": None,
     },
+    player = "j",
     element = "X"
     ) == {
         "row_1_col_1": "X",
