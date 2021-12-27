@@ -1,9 +1,9 @@
+import sys
 import re
 from board import Board
 
 # have  a quit function
 # have an instructions function, including making moves
-
 
 class Game:
     def __init__(self):
@@ -101,3 +101,41 @@ class Game:
             print("No winner - play again!")
         else:
             print(f"Congrats {game_winner}!\n")
+            
+    def run(self) -> None:
+        
+        # get requisite game information
+        player_2_type = self.game_setup()
+        
+        ## temporary until implementation of computer functionality
+        if player_2_type == "computer":
+            sys.exit("Computer's aren't supported yet!")
+        ## end temporary
+
+        player_1, player_2 = self.get_names(player_2_type)
+        player_1_element, player_2_element = self.get_elements(
+            player_1, player_2, player_2_type
+        )
+        
+        # set up initial_board
+        board = Board()
+        current_board = board.initial_board
+        
+        # take turns until game ends
+        current_player = player_1
+        while not board.determine_game_end(current_board):
+
+            # player turns
+            if current_player == player_1:
+                current_board = self.make_move(
+                    current_board, current_player, player_1_element
+                )
+                current_player = player_2
+            else:
+                current_board = self.make_move(
+                    current_board, current_player, player_2_element
+                )
+                current_player = player_1
+
+        game_winner = player_1 if current_player == player_2 else player_2
+        self.show_winner(current_board, game_winner)
