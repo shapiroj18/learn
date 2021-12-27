@@ -5,6 +5,7 @@ from board import Board
 # have  a quit function
 # have an instructions function, including making moves
 
+
 class Game:
     def __init__(self):
         ...
@@ -59,7 +60,7 @@ class Game:
             )
             return player_1_element, player_2_element
 
-    def _moves_dict(self):
+    def _moves_dict(self) -> dict:
         return {
             "1,1": "row_1_col_1",
             "1,2": "row_1_col_2",
@@ -101,12 +102,12 @@ class Game:
             print("No winner - play again!")
         else:
             print(f"Congrats {game_winner}!\n")
-            
+
     def run(self) -> None:
-        
+
         # get requisite game information
         player_2_type = self.game_setup()
-        
+
         ## temporary until implementation of computer functionality
         if player_2_type == "computer":
             sys.exit("Computer's aren't supported yet!")
@@ -116,11 +117,11 @@ class Game:
         player_1_element, player_2_element = self.get_elements(
             player_1, player_2, player_2_type
         )
-        
+
         # set up initial_board
         board = Board()
         current_board = board.initial_board
-        
+
         # take turns until game ends
         current_player = player_1
         while not board.determine_game_end(current_board):
