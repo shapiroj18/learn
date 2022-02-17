@@ -81,6 +81,7 @@ class Game:
         move = input(
             f'{player}\'s turn! Where would you like your next move to be?\nPlease enter in "row,column" format (rows increase top->bottom, columns increase left->right)\n\n'
         ).strip()
+        
         pattern = re.compile("[1-3],[1-3]")
         possible_moves = self._moves_dict()
         while not pattern.fullmatch(move):
