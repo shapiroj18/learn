@@ -17,4 +17,5 @@ Then, you will have a shell open to run the getting started commands per the ins
 
 To restart an in-progress gameshell:
 1. `make run`
-2. TBD
+2. `cd home`
+3. `bash gameshell-save.sh`
