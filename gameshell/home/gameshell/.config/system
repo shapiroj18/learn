@@ -1,0 +1,28 @@
+=========================
+GSH_SHELL=bash
+version
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+=========================
+uname -a
+Linux abe84197d50f 5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+=========================
+awk --version
+mawk 1.3.3 Nov 1996, Copyright (C) Michael D. Brennan
+=========================
+locale
+LANG=
+LANGUAGE=
+LC_CTYPE="POSIX"
+LC_NUMERIC="POSIX"
+LC_TIME="POSIX"
+LC_COLLATE="POSIX"
+LC_MONETARY="POSIX"
+LC_MESSAGES="POSIX"
+LC_PAPER="POSIX"
+LC_NAME="POSIX"
+LC_ADDRESS="POSIX"
+LC_TELEPHONE="POSIX"
+LC_MEASUREMENT="POSIX"
+LC_IDENTIFICATION="POSIX"
+LC_ALL=
+=========================
